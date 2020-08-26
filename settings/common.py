@@ -29,6 +29,7 @@ INSTALLED_APPS = (
     # "django.contrib.humanize",  # Useful template tags
     "openhouce.base",
     "openhouce.users",
+    "openhouce.urlshotener",
     "rest_framework",  # http://www.django-rest-framework.org/
     "rest_framework_swagger",
     "versatileimagefield",  # https://github.com/WGBH/django-versatileimagefield/
@@ -89,7 +90,7 @@ REST_FRAMEWORK = {
     "VERSION_PARAMETER": "version",
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
-    "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.IsAuthenticated"],
+    "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.AllowAny"],
     "DEFAULT_THROTTLE_CLASSES": ["rest_framework.throttling.AnonRateThrottle"],
     "DEFAULT_THROTTLE_RATES": {"anon": "10000/day"},
     "DEFAULT_AUTHENTICATION_CLASSES": (

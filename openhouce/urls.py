@@ -15,6 +15,7 @@ from django.urls import include, path, re_path
 from . import api_urls
 from .base import views as base_views
 from .base.api import schemas as api_schemas
+from openhouce.urlshotener.views import redirect_page
 
 admin.site.site_title = admin.site.site_header = "openhouce Administration"
 handler500 = base_views.server_error
@@ -23,9 +24,7 @@ handler500 = base_views.server_error
 # ==============================================================================
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    path(
-        "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
-    ),
+    path(r'page/<str:url_short_code>', redirect_page, name='redirect_page'),
     # Your stuff: custom urls go here
 ]
 
