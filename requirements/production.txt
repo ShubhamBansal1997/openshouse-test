@@ -1,0 +1,22 @@
+# Pro-tip: Try not to put anything here. There should be no dependency in
+#   production that isn't in development.
+-r common.txt
+
+# Static Files and Media Storage
+# -------------------------------------
+django-storages==1.9.1
+boto3==1.13.16
+
+# Caching
+# -------------------------------------
+django-redis==4.11.0
+hiredis==1.0.1
+
+
+# Logging
+# -------------------------------------
+newrelic==5.12.1.141
+
+# Basic Auth Protection
+# -------------------------------------
+django-auth-wall==0.2.0
